@@ -35,7 +35,7 @@ class Database extends Config
         'hostname' => 'localhost',
         'username' => 'root',
         'password' => '',
-        'database' => 'ci4_crud_rps',
+        'database' => 'perpus',
         'DBDriver' => 'MySQLi',
         'DBPrefix' => '',
         'pConnect' => false,

@@ -38,18 +38,33 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 // $routes->get('/', 'Home::index');
 // $routes->get('/input', 'Home::formInput');
-$routes->get('/', 'DashboardController::index');
+$routes->get('/', 'SigninController::index');
+$routes->post('/login', 'SigninController::login');
+
+$routes->get('/register', 'SignupController::register');
+$routes->post('/signup', 'SignupController::signup');
+$routes->get('/success', 'SignupController::signup');
+
+
 $routes->get('/input', 'DashboardController::add');
-$routes->post('/proses_add', 'DashboardController::proses');
+$routes->get('/edit/(:num)', 'DashboardController::edit/$1');
+$routes->post('/proses_edit', 'DashboardController::edit_data');
+$routes->get('/hapus/(:any)', 'DashboardController::delete_data/$1');
+$routes->get('/dashboard', 'DashboardController::index');
 
-$routes->get('/unduh/(:any)', 'DashboardController::coba/$1');
 
-$routes->get('/view_rps/(:any)', 'DashboardController::view/$1');
 
-$routes->get('/rps_edit/(:num)', 'DashboardController::edit/$1');
-$routes->post('/proses_edit', 'DashboardController::edit_rps');
 
-$routes->get('/rps_hapus/(:any)', 'DashboardController::delete_rps/$1');
+$routes->get('/admin', 'SideController::admin');
+$routes->get('/buku', 'SideController::buku');
+$routes->get('/kategori', 'SideController::kategori');
+$routes->get('/peminjaman', 'SideController::peminjaman');
+$routes->get('/pengembalian', 'SideController::pengembalian');
+$routes->get('/anggota', 'SideController::anggota');
+
+$routes->post('/proses_add', 'AnggotaController::proses');
+
+
 // =====================================================================
 
 

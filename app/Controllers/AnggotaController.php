@@ -2,13 +2,15 @@
 
 namespace App\Controllers;
 
-use App\Models\AnggotaModel;
-use TCPDF;
 use App\Controllers\BaseController;
+use App\Models\AnggotaModel;
 
-
-class DashboardController extends BaseController
+class AnggotaController extends BaseController
 {
+    // public function index()
+    // {
+    //     return view('dashboard/anggota');
+    // }
 
     public function index()
     {
@@ -72,6 +74,7 @@ class DashboardController extends BaseController
         $sm->delete($id);
         return redirect()->to(base_url('anggota'));
     }
+
 
     // public function delete($id = false)
     // {
