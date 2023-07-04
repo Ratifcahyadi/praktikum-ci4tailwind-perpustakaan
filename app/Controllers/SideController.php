@@ -3,7 +3,12 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
+use App\Models\AdminModel;
 use App\Models\AnggotaModel;
+use App\Models\BukuModel;
+use App\Models\KategoriModel;
+use App\Models\PeminjamanModel;
+use App\Models\PengembalianModel;
 
 class SideController extends BaseController
 {
@@ -14,39 +19,75 @@ class SideController extends BaseController
 
     public function dashboard()
     {
-        return view('dashboard/index');
+        $adminModel = new AdminModel();
+        $anggotaModel = new AnggotaModel();
+        $bukuModel = new BukuModel();
+        $kategoriModel = new KategoriModel();
+        
+        $admin = $adminModel->findAll();
+        $anggota = $anggotaModel->findAll();
+        $buku = $bukuModel->findAll();
+        $kategori = $kategoriModel->findAll();
+    
+        return view('dashboard/index', [
+            'anggota' => $anggota,
+            'admin' => $admin,
+            'buku' => $buku,
+            'kategori' => $kategori
+        ]);
     }
+    
     
     public function admin()
     {
-        return view('dashboard/admin');
+        $admin = new AdminModel();
+        $data = $admin->findAll();
+        return View('dashboard/admin', ['data' => $data]);
     }
     
     public function anggota()
     {
-        $sm = new AnggotaModel();
-        $anggota_data = $sm->findAll();
-        return View('dashboard/anggota', ['anggota_data' => $anggota_data]);
+        $anggota = new AnggotaModel();
+        $data = $anggota->findAll();
+        return View('dashboard/anggota', ['data' => $data]);
     }
     
     public function buku()
     {
-        return view('dashboard/buku');
+        $bk = new BukuModel();
+        $data = $bk->findAll();
+        return View('dashboard/buku', ['data' => $data]);
+
     }
     
     public function kategori()
     {
-        return view('dashboard/kategori');
+        $kategoriModel = new KategoriModel();
+        $kategori = $kategoriModel->findAll();
+    
+        return view('dashboard/kategori', [
+            'kategori' => $kategori
+        ]);
     }
     
     public function peminjaman()
     {
-        return view('dashboard/peminjaman');
+        $PeminjamanModel = new PeminjamanModel();
+        $peminjaman = $PeminjamanModel->findAll();
+    
+        return view('dashboard/peminjaman', [
+            'peminjaman' => $peminjaman
+        ]);
     }
     
     public function pengembalian()
     {
-        return view('dashboard/pengembalian');
+        $PengembalianModel = new PengembalianModel();
+        $pengembalian = $PengembalianModel->findAll();
+    
+        return view('dashboard/pengembalian', [
+            'pengembalian' => $pengembalian
+        ]);
     }
     
 }

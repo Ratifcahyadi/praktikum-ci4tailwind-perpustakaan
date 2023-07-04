@@ -17,7 +17,7 @@ include('header.php');
             .content {
                 max-width: 100%;
                 padding: 0 2%;
-                margin: 0 2%;
+                /* margin: 0 2%; */
                 box-sizing: border-box;
             }
 
@@ -47,7 +47,7 @@ include('header.php');
 
             <!-- view hasil -->
             <div class="flex justify-end">
-                <a href="/input" class="btn btn-warning mb-4 font-semibold rounded-full">+ Tambah Anggota</a>
+                <a href="/input_anggota" class="btn btn-warning mb-4 font-semibold rounded-full">+ Tambah Anggota</a>
             </div>
             <div class="card">
                 <div class="">
@@ -66,19 +66,18 @@ include('header.php');
                             <!-- row 1 -->
                             <?php
                             $nomor = 1;
-                            foreach ($anggota_data as $sm) : ?>
+                            foreach ($data as $anggota) : ?>
                                 <tr>
                                     <td><?= $nomor++ ?></td>
-                                    <td><?= $sm->nama ?></td>
-                                    <td><?= $sm->nim ?></td>
-                                    <td><?= $sm->prodi ?></td>
+                                    <td><?= $anggota->nama ?></td>
+                                    <td><?= $anggota->nim ?></td>
+                                    <td><?= $anggota->prodi ?></td>
                                     <td>
                                         <div class="card-actions justify-end">
-                                            <a href="<?= base_url('edit') . '/' . $sm->id ?>" class="btn btn-outline btn-success font-semibold text-white">Edit</a>
-                                            <a href="<?= base_url('hapus') . '/' . $sm->id ?>" class="btn btn-outline btn-danger font-semibold text-white">Delete</a>
+                                            <a href="<?= base_url('edit_anggota') . '/' . $anggota->id ?>" class="btn btn-outline btn-success font-semibold text-white">Edit</a>
+                                            <a href="<?= base_url('hapus_anggota') . '/' . $anggota->id ?>" class="btn btn-outline btn-danger font-semibold text-white">Delete</a>
                                     </td>
                                 <?php endforeach ?>
-                                <tr>
                                 </tr>
                         </tbody>
                     </table>

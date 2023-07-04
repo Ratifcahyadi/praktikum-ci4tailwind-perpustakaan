@@ -1,5 +1,5 @@
 <?php
-
+namespace App\Models;
 namespace Config;
 
 use CodeIgniter\Database\Config;

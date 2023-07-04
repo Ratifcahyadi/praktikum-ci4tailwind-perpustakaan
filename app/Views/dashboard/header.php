@@ -72,7 +72,7 @@
     </style>
 </head>
 <body>
-    <header class="bg-primary">
+    <header class="bg-primary top-0 sticky">
         <i class="material-icons">dashboard</i>
         <h1>Header</h1>
     </header>

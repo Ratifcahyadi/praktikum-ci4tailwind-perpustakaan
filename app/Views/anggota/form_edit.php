@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>FORM INPUT RPS AMIKOM</title>
+    <title>FORM EDIT ANGGOTA PERPUSTAKAAN AMIKOM</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/css/app.css">
@@ -15,7 +15,7 @@
     <div class="bg-primary py-3 flex justify-center">
         
         <div class="mx-auto">
-            <h1 class="text-xl text-white font-bold text-center ">Form Pengisian Anggota Perpustakaan</h1>
+            <h1 class="text-xl text-white font-bold text-center ">Form Edit Pengisian Anggota Perpustakaan</h1>
             <p class="text-white text-center">-- Universitas AMIKOM Yogyakarta --</p>
         </div>
     </div>
@@ -25,7 +25,7 @@
     <i class='bx bx-left-arrow-alt bx-md '></i>Dashboard</button>
     </a>
     <!-- Dashboard RPS -->
-    <form action="<?= base_url('proses_edit') ?>" method="POST" class="flex justify-center items-center ">
+    <form action="<?= base_url('proses_edit_anggota') ?>" method="POST" class="flex justify-center items-center ">
         <div class="card w-96 shadow-xl bg-slate-700 ">
             <div class="w-96 p-6 ">
                 <h2 class="card-title border-b-2 py-2 border-primary-500 border-slate-400 text-center text-yellow-400 text-2xl w-auto max-w-sm">

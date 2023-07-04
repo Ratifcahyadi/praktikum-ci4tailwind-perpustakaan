@@ -39,4 +39,9 @@ class SigninController extends BaseController
             }
         }
     }
+
+    public function logout()
+    {
+        return redirect()->to(base_url());
+    }
 }

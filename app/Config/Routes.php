@@ -40,21 +40,44 @@ $routes->set404Override();
 // $routes->get('/input', 'Home::formInput');
 $routes->get('/', 'SigninController::index');
 $routes->post('/login', 'SigninController::login');
+$routes->get('/logout', 'SigninController::logout');
 
 $routes->get('/register', 'SignupController::register');
 $routes->post('/signup', 'SignupController::signup');
 $routes->get('/success', 'SignupController::signup');
 
 
-$routes->get('/input', 'DashboardController::add');
-$routes->get('/edit/(:num)', 'DashboardController::edit/$1');
-$routes->post('/proses_edit', 'DashboardController::edit_data');
-$routes->get('/hapus/(:any)', 'DashboardController::delete_data/$1');
-$routes->get('/dashboard', 'DashboardController::index');
+$routes->get('/input_anggota', 'AnggotaController::add');
+$routes->get('/edit_anggota/(:num)', 'AnggotaController::edit/$1');
+$routes->post('/proses_edit_anggota', 'AnggotaController::edit_data');
+$routes->get('/hapus_anggota/(:any)', 'AnggotaController::delete_data/$1');
+$routes->post('/proses_add_anggota', 'AnggotaController::proses');
 
+$routes->get('/input_buku', 'BukuController::add');
+$routes->get('/edit_buku/(:num)', 'BukuController::edit/$1');
+$routes->post('/proses_edit_buku', 'BukuController::edit_data');
+$routes->get('/hapus_buku/(:any)', 'BukuController::delete_data/$1');
+$routes->post('/proses_add_buku', 'BukuController::proses');
 
+$routes->get('/input_kategori', 'KategoriController::add');
+$routes->get('/edit_kategori/(:num)', 'KategoriController::edit/$1');
+$routes->post('/proses_edit_kategori', 'KategoriController::edit_data');
+$routes->get('/hapus_kategori/(:any)', 'KategoriController::delete_data/$1');
+$routes->post('/proses_add_kategori', 'KategoriController::proses');
 
+$routes->get('/input_peminjaman', 'PeminjamanController::add');
+$routes->get('/edit_peminjaman/(:num)', 'PeminjamanController::edit/$1');
+$routes->post('/proses_edit_peminjaman', 'PeminjamanController::edit_data');
+$routes->get('/hapus_peminjaman/(:any)', 'PeminjamanController::delete_data/$1');
+$routes->post('/proses_add_peminjaman', 'PeminjamanController::proses');
 
+$routes->get('/input_pengembalian', 'PengembalianController::add');
+$routes->get('/edit_pengembalian/(:num)', 'PengembalianController::edit/$1');
+$routes->post('/proses_edit_pengembalian', 'PengembalianController::edit_data');
+$routes->get('/hapus_pengembalian/(:any)', 'PengembalianController::delete_data/$1');
+$routes->post('/proses_add_pengembalian', 'PengembalianController::proses');
+
+$routes->get('/dashboard', 'SideController::dashboard');
 $routes->get('/admin', 'SideController::admin');
 $routes->get('/buku', 'SideController::buku');
 $routes->get('/kategori', 'SideController::kategori');
@@ -62,7 +85,6 @@ $routes->get('/peminjaman', 'SideController::peminjaman');
 $routes->get('/pengembalian', 'SideController::pengembalian');
 $routes->get('/anggota', 'SideController::anggota');
 
-$routes->post('/proses_add', 'AnggotaController::proses');
 
 
 // =====================================================================
